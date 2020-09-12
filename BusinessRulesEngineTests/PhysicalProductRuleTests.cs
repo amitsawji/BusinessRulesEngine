@@ -15,7 +15,7 @@ namespace BusinessRulesEngineTests
         }
 
         [Test]
-        public void Given_A_Product_When_()
+        public void Given_A_Product_When_Execute_Is_Called_Throws_NotImplementedException()
         {
             //arrange 
             var product = _fixture.Create<PhysicalProduct>();
