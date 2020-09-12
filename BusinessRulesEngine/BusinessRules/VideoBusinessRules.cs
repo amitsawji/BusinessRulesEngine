@@ -23,7 +23,6 @@ namespace BusinessRulesEngine.BusinessRules
 
             if (product.ProductName == "Learning To Ski")
             {
-                Console.WriteLine($"First Aid video added");
                 _partnerService.GeneratePackingSlip();
             }
             _partnerService.GeneratePackingSlip();

@@ -15,11 +15,12 @@ namespace BusinessRulesEngine.PaymentStrategy
             _businessRules = productBusinessRules;
         }
 
-        public void ProcessPayment(IProduct product)
+        public string ProcessPayment(IProduct product)
         {
             var rule = _businessRules.FirstOrDefault(x=>x.ProductType == product.ProductType);
             if (rule == null) throw new ArgumentNullException(nameof(rule));
             rule.Execute(product);
+            return rule.ProductType.ToString(); //Returning for console display.
         }
     }
 }

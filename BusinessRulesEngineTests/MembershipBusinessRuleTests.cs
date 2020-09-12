@@ -82,6 +82,9 @@ namespace BusinessRulesEngineTests
             var product = _fixture.Create<Membership>();
             product.IsUpgrade = true;       
             var sut = new MembershipBusinessRule(_mockRepository.Object);
+            _mockRepository.Setup(m => m.SendEmail()).Returns(Task.CompletedTask);
+            _mockRepository.Setup(m => m.UpgradeMembership()).Returns(Task.CompletedTask);
+            _mockRepository.Setup(m => m.ActivateMembership()).Returns(Task.CompletedTask);
 
             // Act
             sut.Execute(product);
