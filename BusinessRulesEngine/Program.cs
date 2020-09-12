@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using BusinessRulesEngine.Models;
+using BusinessRulesEngine.PaymentStrategy;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 
@@ -7,12 +10,6 @@ namespace BusinessRulesEngine
     public class Program
     {
         static void Main(string[] args)
-        {
-            InitializeProgram();
-           
-        }
-
-        private static void InitializeProgram()
         {
             var builder = new HostBuilder()
             .ConfigureAppConfiguration((hostingContext, config) =>
@@ -26,6 +23,12 @@ namespace BusinessRulesEngine
                 Startup.ConfigureServices(services);
             })
             .Build();
+
+            var product = new Book { AuthorName = "John Doe", Genre = "Thriller", ProductName = "Murder Mystery", ProductType = ProductType.Book };
+
+            var paymentService = builder.Services.GetRequiredService<IPaymentStratgy>();
+            paymentService.ProcessPayment(product);
+
         }
     }
 }
