@@ -18,7 +18,12 @@ namespace BusinessRulesEngineTests
         public void Setup()
         {
             _mockRepository = MockRepository.Create<IPartnerService>();
-            _mockRepository.Setup(m => m.GeneratePackingSlip()).Returns(Task.CompletedTask);
+        }
+
+        [TearDown]
+        public void Teardown()
+        {
+            _mockRepository.VerifyAll();
         }
 
         [Test]
@@ -41,6 +46,7 @@ namespace BusinessRulesEngineTests
             var product = _fixture.Create<Video>();
             product.Price = 100;
             var sut = new VideoBusinessRules(_mockRepository.Object);
+            _mockRepository.Setup(m => m.GeneratePackingSlip()).Returns(Task.CompletedTask);
 
             // Act
             sut.Execute(product);
@@ -55,6 +61,7 @@ namespace BusinessRulesEngineTests
             //arrange 
             var product = _fixture.Create<Video>();
             var sut = new VideoBusinessRules(_mockRepository.Object);
+            _mockRepository.Setup(m => m.GeneratePackingSlip()).Returns(Task.CompletedTask);
 
             // Act
             sut.Execute(product);
@@ -70,6 +77,7 @@ namespace BusinessRulesEngineTests
             var product = _fixture.Create<Video>();
             product.ProductName = "Learning To Ski";
             var sut = new VideoBusinessRules(_mockRepository.Object);
+            _mockRepository.Setup(m => m.GeneratePackingSlip()).Returns(Task.CompletedTask);
 
             // Act
             sut.Execute(product);
