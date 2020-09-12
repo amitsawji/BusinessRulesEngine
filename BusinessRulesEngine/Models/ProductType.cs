@@ -5,7 +5,6 @@
         PhysicalProduct,
         Book,
         Membership,
-        UpgradeMembership,
         Video
     }
 }
