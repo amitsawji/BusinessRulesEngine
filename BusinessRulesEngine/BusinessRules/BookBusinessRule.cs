@@ -1,7 +1,6 @@
 ﻿using BusinessRulesEngine.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace BusinessRulesEngine.BusinessRules
 {
@@ -11,7 +10,7 @@ namespace BusinessRulesEngine.BusinessRules
 
         public void Execute(IProduct product)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

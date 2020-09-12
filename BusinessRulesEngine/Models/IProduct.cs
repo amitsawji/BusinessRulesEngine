@@ -20,6 +20,8 @@
         /// <summary>
         /// Net price of the product without any taxes or discounts
         /// </summary>
-        public double Price { get; set; }
+        public decimal Price { get; set; }
+
+        public decimal FinalPrice { get; set; }
     }
 }
