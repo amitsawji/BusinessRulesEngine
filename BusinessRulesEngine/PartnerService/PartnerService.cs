@@ -1,38 +1,36 @@
-﻿using BusinessRulesEngine.ThirdPartyOperations;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace BusinessRulesEngine.PartnerService
 {
     public class PartnerService : IPartnerService
     {
-        public void ActivateMembership()
+        public async Task ActivateMembership()
         {
             Console.WriteLine("Membership activated!");
         }
 
-        public void GenerateCommision()
+        public async Task GenerateCommision()
         {
             Console.WriteLine("Commision Generated!");
         }
 
-        public void GeneratePackingSlip()
+        public async Task GeneratePackingSlip()
         {
             Console.WriteLine("Packing slip generated!");
         }
 
-        public void MakePayment()
+        public async Task MakePayment()
         {
             Console.WriteLine("Payment successful!");
         }
 
-        public void SendEmail()
+        public async Task SendEmail()
         {
             Console.WriteLine("Email sent!");
         }
 
-        public void UpgradeMembership()
+        public async Task UpgradeMembership()
         {
             Console.WriteLine("Membership upgraded!");
         }

@@ -1,4 +1,6 @@
-﻿namespace BusinessRulesEngine.ThirdPartyOperations
+﻿using System.Threading.Tasks;
+
+namespace BusinessRulesEngine.PartnerService
 {
     /// <summary>
     /// Interface for handling thirt party operations. To keep this short,
@@ -6,11 +8,11 @@
     /// </summary>
     public interface IPartnerService
     {
-        void GeneratePackingSlip();
-        void ActivateMembership();
-        void UpgradeMembership();
-        void SendEmail();
-        void GenerateCommision();
-        void MakePayment();
+        Task GeneratePackingSlip();
+        Task ActivateMembership();
+        Task UpgradeMembership();
+        Task SendEmail();
+        Task GenerateCommision();
+        Task MakePayment();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BusinessRulesEngine.BusinessRules;
+using BusinessRulesEngine.PartnerService;
 using BusinessRulesEngine.PaymentStrategy;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +13,7 @@ namespace BusinessRulesEngine
             serviceCollection.AddScoped<IProductBusinessRule, BookBusinessRule>();
             serviceCollection.AddScoped<IProductBusinessRule, MembershipBusinessRule>();
             serviceCollection.AddScoped<IProductBusinessRule, VideoBusinessRules>();
+            serviceCollection.AddScoped<IPartnerService, PartnerService.PartnerService>();
             serviceCollection.AddScoped<IPaymentStratgy, PaymentStrategy.PaymentStrategy>();
         }
     }
