@@ -13,6 +13,7 @@ namespace BusinessRulesEngineTests
     public class BookBusinessRulesTest : TestBase
     {
         private Mock<IPartnerService> _mockRepository;
+
         [SetUp]
         public void Setup()
         {

@@ -2,7 +2,6 @@
 using BusinessRulesEngine.PartnerService;
 using System;
 
-
 namespace BusinessRulesEngine.BusinessRules
 {
     public class BookBusinessRule : IProductBusinessRule
@@ -16,8 +15,7 @@ namespace BusinessRulesEngine.BusinessRules
 
         public ProductType ProductType => ProductType.Book;
         int gstPercentage = 0;
-        int commistionPercentage = 5;
-
+    
         public void Execute(IProduct product)
         {
             if (product == null) throw new ArgumentNullException();
